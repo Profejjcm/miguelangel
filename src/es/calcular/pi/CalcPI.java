@@ -11,6 +11,11 @@ public class CalcPI {
         //Introduce<Constant
         //Indicamos nombre de la constante y marcamos que queremos reemplazar las ocurrencias
         MathContext mc = new MathContext(NUM_DIG);         
+        compute(mc);
+    }
+
+    public static void compute(MathContext mc) {
+        //Seleccionamos texto y damos clic derecho<Refactor<Introduce<Method
         //meter en el método compute
         BigDecimal pi = new BigDecimal(0);
         BigDecimal limit = new BigDecimal(1).movePointLeft(NUM_DIG);
