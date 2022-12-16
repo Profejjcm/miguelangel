@@ -6,10 +6,14 @@ import java.math.MathContext;
 public class CalcPI {
 
      public static void main(String[] args) {
-        MathContext mc = new MathContext(10);         
+        //Seleccionamos el parametro a modificar
+        //Clic derecho<Refactor
+        //Introduce<Constant
+        //Indicamos nombre de la constante y marcamos que queremos reemplazar las ocurrencias
+        MathContext mc = new MathContext(NUM_DIG);         
         //meter en el método compute
         BigDecimal pi = new BigDecimal(0);
-        BigDecimal limit = new BigDecimal(1).movePointLeft(10);
+        BigDecimal limit = new BigDecimal(1).movePointLeft(NUM_DIG);
         boolean stop = false;
         for (int k = 0; !stop; k++) {
             BigDecimal piK = piFunction(k, mc);
@@ -22,6 +26,7 @@ public class CalcPI {
         System.out.println(pi.round(mc));
         //meter en el método compute
     }
+    public static final int NUM_DIG = 10;
 
     public static BigDecimal piFunction(int k, MathContext mc) {
         //meter en el método piFunction
